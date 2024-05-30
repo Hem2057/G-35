@@ -1,0 +1,43 @@
+   <!--=============== CART ===============-->
+   
+
+    <div class="cart" id="cart">
+        <i class="bx bx-x cart__close" id="cart-close"></i>
+
+        <h2 class="cart__title-center">My Cart</h2>
+
+        <div class="cart__container">
+            <div class="kart-items">
+
+            </div>
+        </div>
+
+        <div class="cart__prices">
+            <span class="cart__prices-item noOfItems">1 item</span>
+            <span class="cart__prices-total total" id="totals">$12</span>
+        </div>
+        <span class="total"></span>
+        <hr>
+        
+        
+        <div id="paypal-button-container"></div>
+        <script src="https://www.paypal.com/sdk/js?client-id=ARxuFH7t9F90nPO46lFy9wxjgwIhEmsVs01YBLsE7QX_rCkmyOcnyKeHuE4d9kh8lpGIUaLIXJYfDXa1"></script>
+
+        <script>
+            var total = document.getElementById("totals").value;
+            paypal.Buttons({
+                
+                createOrder: function(data, actions){
+                    //function  sets up details of transaction, including amount and line item details
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: "100.00"
+                            }
+                        }]
+                    })
+                }
+            }).render("#paypal-button-container")
+        </script>
+
+    </div>
