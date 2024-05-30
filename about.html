@@ -4,200 +4,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!--=============== BOXICONS ===============-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-
-    <!--=============== SWIPER CSS ===============-->
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-
-    <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" class="js-color-style" href="assets/css/colors/color-1.css">
-
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <title>e-commerce website</title>
 </head>
 <body>
-    <!--=============== HEADER ===============-->
+   
     <header class="header" id="header">
         <nav class="nav container">
             <a href="index.html" class="nav__logo">
-                <i class="bx bxs-shopping-bags nav__logo-icon"></i> CottonHub
+                <img src="assets/img/logo-1.png" alt="">
             </a>
-
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="index.html" class="nav__link">Home</a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="shop.html" class="nav__link">Shop</a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="cart.html" class="nav__link active-link">About</a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="blog.html" class="nav__link">Blog</a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="faq.html" class="nav__link">Faq's</a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="contact.html" class="nav__link">Contact</a>
-                    </li>
+                    <li class="nav__item"><a href="index.html" class="nav__link active-link">Home</a></li>
+                    <li class="nav__item"><a href="shop.html" class="nav__link">Shop</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+                    <li class="nav__item"><a href="faq.html" class="nav__link">Faq's</a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
                 </ul>
-
-                <div class="nav__close" id="nav-close">
-                    <i class="bx bx-x"></i>
-                </div>
+                <div class="nav__close" id="nav-close"><i class="bx bx-x"></i></div>
             </div>
-
             <div class="nav__btns">
-                <div class="login__toggle" id="login-button">
-                    <i class="bx bx-user"></i>
-                </div>
-
-                <div class="nav__shop" id="cart-shop">
-                    <i class="bx bx-shopping-bag"></i>
-                </div>
-
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="bx bx-grid-alt"></i>
-                </div>
+                <div class="login__toggle" id="login-button"><i class="bx bx-user"></i></div>
+                <div class="nav__shop" id="cart-button"><i class="bx bx-shopping-bag"></i><span id="product-count">0</span></div>
+                <div class="nav__toggle" id="nav-toggle"><i class="bx bx-grid-alt"></i></div>
             </div>
         </nav>
     </header>
 
-    <!--=============== CART ===============-->
-    <div class="cart" id="cart">
-        <i class="bx bx-x cart__close" id="cart-close"></i>
-
-        <h2 class="cart__title-center">My Cart</h2>
-
-        <div class="cart__container">
-            <article class="cart__card">
-                <div class="cart__box">
-                    <img src="assets/img/cart-1.png" alt="" class="cart__img">
-                </div>
-
-                <div class="cart__details">
-                    <h3 class="cart__title">Windbreaker</h3>
-                    <span class="cart__price">$12</span>
-
-                    <div class="cart__amount">
-                        <div class="cart__amount-content">
-                            <span class="cart__amount-box">
-                                <i class="bx bx-minus"></i>
-                            </span>
-
-                            <span class="cart__amount-number">1</span>
-
-                            <span class="cart__amount-box">
-                                <i class="bx bx-plus"></i>
-                            </span>
-                        </div>
-
-                        <i class="bx bx-trash-alt cart__amount-trash"></i>
-                    </div>
-                </div>
-            </article>
-
-            <article class="cart__card">
-                <div class="cart__box">
-                    <img src="assets/img/cart-2.png" alt="" class="cart__img">
-                </div>
-
-                <div class="cart__details">
-                    <h3 class="cart__title">Cardigan Hoodie</h3>
-                    <span class="cart__price">$16</span>
-
-                    <div class="cart__amount">
-                        <div class="cart__amount-content">
-                            <span class="cart__amount-box">
-                                <i class="bx bx-minus"></i>
-                            </span>
-
-                            <span class="cart__amount-number">1</span>
-
-                            <span class="cart__amount-box">
-                                <i class="bx bx-plus"></i>
-                            </span>
-                        </div>
-
-                        <i class="bx bx-trash-alt cart__amount-trash"></i>
-                    </div>
-                </div>
-            </article>
-
-            <article class="cart__card">
-                <div class="cart__box">
-                    <img src="assets/img/cart-3.png" alt="" class="cart__img">
-                </div>
-
-                <div class="cart__details">
-                    <h3 class="cart__title">Cartoon</h3>
-                    <span class="cart__price">$10</span>
-
-                    <div class="cart__amount">
-                        <div class="cart__amount-content">
-                            <span class="cart__amount-box">
-                                <i class="bx bx-minus"></i>
-                            </span>
-
-                            <span class="cart__amount-number">1</span>
-
-                            <span class="cart__amount-box">
-                                <i class="bx bx-plus"></i>
-                            </span>
-                        </div>
-
-                        <i class="bx bx-trash-alt cart__amount-trash"></i>
-                    </div>
-                </div>
-            </article>
+    <div class="cart-tab" id="cartShop">
+        <h1>Cart</h1>
+        <div class="empty-cart-message" id="empty-cart-message" style="display: none;">
+            <img src="assets/img/cover-cart.png" alt="Empty Cart" />
+            <p>Your cart is empty</p>
+            <button class="addcart" id="shop-now-button">Shop Now</button>
         </div>
-
-        <div class="cart__prices">
-            <span class="cart__prices-item">3 item</span>
-            <span class="cart__prices-total">$38</span>
+        <div class="listcart"></div>
+        <div class="total-price" id="total-price"><span>$l0.00</span></div>
+        <div class="btn">
+            <button class="exit" id="cart-close">CLOSE</button>
+            <button class="checkout">CHECKOUT</button>
         </div>
     </div>
 
-    <!--=============== LOGIN ===============-->
     <div class="login" id="login">
         <i class="bx bx-x login__close" id="login-close"></i>
-
         <h2 class="login__title-center">Login</h2>
-
         <form action="" class="login__form grid">
             <div class="login__content">
                 <label for="" class="login__label">Email</label>
                 <input type="email" class="login__input">
             </div>
-
             <div class="login__content">
                 <label for="" class="login__label">Password</label>
                 <input type="password" class="login__input">
             </div>
-
-            <div>
-                <a href="#" class="button">Sign in</a>
-            </div>
-
-            <div>
-                <p class="signup">Not a member? <a href="registration.html">Sign up now</a></p>
-            </div>
+            <div><a href="#" class="button">Sign in</a></div>
+            <div><p class="signup">Not a member? <a href="registration.html">Sign up now</a></p></div>
         </form>
     </div>
 
     <!--=============== MAIN ===============-->
+    <article class="article"  data-bgcolor="#4d2846">
     <main class="main">
-        <!--=============== ABOUT ===============-->
+         <!--=============== ABOUT ===============-->
+       
         <section class="about section container">
             <h2 class="breadcrumb__title">About Page</h2>
             <h3 class="breadcrumb__subtitle">Home > <span>About us</span></h3>
@@ -224,64 +100,149 @@
                         </p>
                         <p class="about__details-description">
                             <i class="bx bxs-check-square about__details-icon"></i>
-                            100% money back guaranted.
+                            100% money back guaranteed.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
-    </main>
 
+
+
+        <!--=============== PRIVACY POLICY ===============-->
+        <section class="privacy section container">
+            <h2 class="section__title">Privacy Policy</h2>
+            <p class="privacy__description">
+                Your privacy is important to us. This privacy statement explains the personal data we collect, how we use it, and how we protect your data.
+            </p>
+            <h3 class="privacy__subtitle">Information We Collect</h3>
+            <p class="privacy__text">
+                We collect information to provide better services to our users. This includes information you provide directly to us, such as your name, email address, and payment information, as well as information collected automatically, such as device information and IP addresses.
+            </p>
+            <h3 class="privacy__subtitle">How We Use Information</h3>
+            <p class="privacy__text">
+                We use the information we collect for various purposes, including to process your transactions, provide customer support, improve our services, and communicate with you about our products, services, and promotions.
+            </p>
+            <h3 class="privacy__subtitle">Information Sharing</h3>
+            <p class="privacy__text">
+                We do not share your personal information with companies, organizations, or individuals outside of our company except in the following cases: with your consent, for external processing, or for legal reasons.
+            </p>
+            <h3 class="privacy__subtitle">Data Security</h3>
+            <p class="privacy__text">
+                We are committed to protecting your data. We implement various security measures to ensure the safety of your personal information. However, no method of transmission over the internet or method of electronic storage is 100% secure.
+            </p>
+        </section>
+
+        <!--=============== REFUND SECTION ===============-->
+        <section class="refund section container">
+            <div class="refund__content">
+                <div class="refund__text">
+                    <h2 class="section__title">Refund Policy</h2>
+                    <p class="refund__description">
+                        If you are not satisfied with your purchase, you can request a refund. Please fill out the form below to initiate the process.
+                    </p>
+                </div>
+                <form action="" class="refund__form grid">
+                    <div class="form__content">
+                        <label for="refund-name" class="form__label">Name</label>
+                        <input type="text" id="refund-name" class="form__input">
+                    </div>
+        
+                    <div class="form__content">
+                        <label for="refund-email" class="form__label">Email</label>
+                        <input type="email" id="refund-email" class="form__input">
+                    </div>
+        
+                    <div class="form__content">
+                        <label for="refund-order" class="form__label">Order Number</label>
+                        <input type="text" id="refund-order" class="form__input">
+                    </div>
+        
+                    <div class="form__content">
+                        <label for="refund-reason" class="form__label">Reason for Refund</label>
+                        <textarea id="refund-reason" class="form__input"></textarea>
+                    </div>
+        
+                    <div>
+                        <button type="submit" class="button">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!--=============== COMPLAINT SECTION ===============-->
+        <section class="complaint section container">
+            <div class="complaint__content">
+                <div class="complaint__text">
+                    <h2 class="section__title">Complaint Form</h2>
+                    <p class="complaint__description">
+                        We are sorry to hear you have a complaint. Please fill out the form below and we will address your concerns as soon as possible.
+                    </p>
+                </div>
+                <form action="" class="complaint__form grid">
+                    <div class="form__content">
+                        <label for="complaint-name" class="form__label">Name</label>
+                        <input type="text" id="complaint-name" class="form__input">
+                    </div>
+        
+                    <div class="form__content">
+                        <label for="complaint-email" class="form__label">Email</label>
+                        <input type="email" id="complaint-email" class="form__input">
+                    </div>
+        
+                    <div class="form__content">
+                        <label for="complaint-issue" class="form__label">Issue</label>
+                        <textarea id="complaint-issue" class="form__input"></textarea>
+                    </div>
+        
+                    <div>
+                        <button type="submit" class="button">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+  
+    </main>
+</article>
     <!--=============== FOOTER ===============-->
     <footer class="footer section">
         <div class="footer__container container grid">
-            <!-- FOOTER CONTENT 1 -->
             <div class="footer__content">
-                <a href="#" class="footer__logo">
-                    <i class="bx bxs-shopping-bags footer__logo-icon"></i>CottonHub
+                <a href="index.html" class="footer__logo">
+                    <img src="assets/img/logo-1.png" alt="">
                 </a>
-
-                <p class="footer__description">Enjoy the biggest sale <br> of your life.</p>
-
                 <div class="footer__social">
                     <a href="#" class="footer__social-link"><i class="bx bxl-facebook"></i></a>
                     <a href="#" class="footer__social-link"><i class="bx bxl-instagram-alt"></i></a>
                     <a href="#" class="footer__social-link"><i class="bx bxl-twitter"></i></a>
                 </div>
             </div>
-            <!-- FOOTER CONTENT 2 -->
             <div class="footer__content">
-                <h3 class="footer__title">About</h3>
-
+                <h3 class="footer__title">About Us</h3>
                 <ul class="footer__links">
                     <li><a href="#" class="footer__link">About Us</a></li>
                     <li><a href="#" class="footer__link">Customer Support</a></li>
                     <li><a href="#" class="footer__link">Support Center</a></li>
                 </ul>
             </div>
-            <!-- FOOTER CONTENT 3 -->
             <div class="footer__content">
                 <h3 class="footer__title">Our Services</h3>
-
                 <ul class="footer__links">
                     <li><a href="#" class="footer__link">Shop</a></li>
                     <li><a href="#" class="footer__link">Discounts</a></li>
                     <li><a href="#" class="footer__link">Shipping mode</a></li>
                 </ul>
             </div>
-            <!-- FOOTER CONTENT 4 -->
             <div class="footer__content">
                 <h3 class="footer__title">Our Company</h3>
-
                 <ul class="footer__links">
                     <li><a href="#" class="footer__link">Register</a></li>
                     <li><a href="#" class="footer__link">Contact Us</a></li>
-                    <li><a href="about.html" class="footer__link">About Us</a></li>
+                    <li><a href="#" class="footer__link">About Us</a></li>
                 </ul>
             </div>
         </div>
-
-        <span class="footer__copy">&#169; Hem. All rights reserved</span>
+        <span class="footer__copy">&#169;  <span class="footer__copy">Some of these design are taken from<br> https://www.youtube.com/watch?v=Ws69qob4veA&list=PLrKudo5h_b8DwVH6ym4oBfnvwE6IllFte</span></span>
     </footer>
 
     <!--=============== SCROLL UP ===============-->
@@ -290,21 +251,7 @@
     </a>
 
     <!--=============== STYLE SWITCHER ===============-->
-    <div class="style__switcher">
-        <div class="style__switcher-toggler s__icon">
-            <i class="bx bxs-cog bx-spin"></i>
-        </div>
-
-        <h4>Theme Colors</h4>
-
-        <div class="theme__colors js-theme-colors">
-            <button type="button"  data-js-theme-color="color-1" class="js-theme-color-item theme__button color-1"><i class="bx bx-check"></i></button>
-            <button type="button"  data-js-theme-color="color-2" class="js-theme-color-item theme__button color-2"><i class="bx bx-check"></i></button>
-            <button type="button"  data-js-theme-color="color-3" class="js-theme-color-item theme__button color-3"><i class="bx bx-check"></i></button>
-            <button type="button"  data-js-theme-color="color-4" class="js-theme-color-item theme__button color-4"><i class="bx bx-check"></i></button>
-            <button type="button"  data-js-theme-color="color-5" class="js-theme-color-item theme__button color-5"><i class="bx bx-check"></i></button>
-        </div>
-    </div>
+    
     
     <!--=============== SWIPER JS ===============-->
     <script src="assets/js/swiper-bundle.min.js"></script>

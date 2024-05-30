@@ -1,0 +1,50 @@
+{
+    "id": 1,
+    "name": SummerSuit,
+    "price": 200,
+    "image": "assets/img/product-1.png"
+
+
+}
+
+{
+
+    "id": 2,
+    "name": TShirt,
+    "price": 20,
+    "image": "assets/img/product-1.png"
+}
+
+
+{
+    "id": 3,
+    "name": SHOCKS,
+    "price": 100,
+    "image": "assets/img/product-1.png"
+
+
+}
+{
+    "id":4,
+    "name": PAINT,
+    "price": 50,
+    "image": "assets/img/product-1.png"
+
+
+}
+{
+    "id":5,
+    "name": DONT,
+    "price": 300,
+    "image": "assets/img/product-1.png"
+
+
+}
+{
+    "id":6,
+    "name": SLIPPER,
+    "price": 500,
+    "image": "assets/img/product-1.png"
+
+
+}
