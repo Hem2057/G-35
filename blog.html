@@ -19,13 +19,14 @@
             </a>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="index.html" class="nav__link active-link">Home</a></li>
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
                     <li class="nav__item"><a href="shop.html" class="nav__link">Shop</a></li>
                     <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
-                    <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+                    <li class="nav__item"><a href="blog.html" class="nav__link active-link">Blog</a></li>
                     <li class="nav__item"><a href="faq.html" class="nav__link">Faq's</a></li>
                     <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
                 </ul>
+                
                 <div class="nav__close" id="nav-close"><i class="bx bx-x"></i></div>
             </div>
             <div class="nav__btns">
@@ -68,7 +69,7 @@
         </form>
     </div>
     <!--=============== MAIN ===============-->
-    <main class="main">
+    <main class="main article" data-bgcolor="#4d2846">
         <article class="article" data-bgcolor="#4d2846">
 
         <!--=============== DISCOUNT BANNER ===============-->
@@ -88,7 +89,7 @@
                             <div class="discount-info">
                                 <h3 class="discount-title">Special Offer</h3>
                                 <p class="discount-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                <span class="discount-price">$XX.XX</span>
+                                <span class="discount-price">$299.99</span>
                                 <a href="shop.html" class="discount-link">Shop Now</a>
                             </div>
                     </div>
@@ -301,7 +302,7 @@
                 </ul>
             </div>
         </div>
-        <span class="footer__copy">&#169;  <span class="footer__copy">Some of these design are taken from<br> https://www.youtube.com/watch?v=Ws69qob4veA&list=PLrKudo5h_b8DwVH6ym4oBfnvwE6IllFte</span></span>
+        <span class="footer__copy">| Group-35 |</span>
     </footer>
 
     <!--=============== SCROLL UP ===============-->
@@ -314,105 +315,8 @@
 
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
-
-    <!--=============== BLOG JS ===============-->
-    <script>
-        const postsPerPage = 3; // Show 1 post per page
-        const blogContainer = document.getElementById('blogContainer');
-        const pagination = document.getElementById('pagination');
-        const blogPosts = blogContainer.getElementsByClassName('blog__post');
-        const discountsSection = document.getElementById('discounts');
-        const comingSoonBanner1 = document.getElementById('comingSoonBanner1');
-        const comingSoonBanner2 = document.getElementById('comingSoonBanner2');
-        let currentPage = 1;
-
-        function displayPosts() {
-            for (let i = 0; i < blogPosts.length; i++) {
-                blogPosts[i].style.display = 'none';
-            }
-            for (let i = (currentPage - 1) * postsPerPage; i < currentPage * postsPerPage && i < blogPosts.length; i++) {
-                blogPosts[i].style.display = 'grid';
-            }
-            updatePagination();
-            updateSections();
-        }
-
-        function updatePagination() {
-            const totalPages = Math.ceil(blogPosts.length / postsPerPage);
-            pagination.innerHTML = '';
-
-            const leftArrow = document.createElement('a');
-            leftArrow.href = '#';
-            leftArrow.className = 'pagination__icon';
-            if (currentPage === 1) {
-                leftArrow.classList.add('pagination__icon--disabled');
-                leftArrow.setAttribute('aria-disabled', 'true');
-            }
-            leftArrow.innerHTML = '<i class="bx bx-chevron-left"></i>';
-            leftArrow.addEventListener('click', (e) => {
-                e.preventDefault();
-                if (currentPage > 1) {
-                    currentPage--;
-                    displayPosts();
-                }
-            });
-            pagination.appendChild(leftArrow);
-
-            for (let i = 1; i <= totalPages; i++) {
-                const pageLink = document.createElement('a');
-                pageLink.href = '#';
-                pageLink.innerText = i;
-                if (i === currentPage) {
-                    pageLink.classList.add('current');
-                }
-                pageLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    currentPage = i;
-                    displayPosts();
-                });
-                pagination.appendChild(pageLink);
-            }
-
-            const rightArrow = document.createElement('a');
-            rightArrow.href = '#';
-            rightArrow.className = 'pagination__icon';
-            if (currentPage === totalPages) {
-                rightArrow.classList.add('pagination__icon--disabled');
-                rightArrow.setAttribute('aria-disabled', 'true');
-            }
-            rightArrow.innerHTML = '<i class="bx bx-chevron-right"></i>';
-            rightArrow.addEventListener('click', (e) => {
-                e.preventDefault();
-                if (currentPage < totalPages) {
-                    currentPage++;
-                    displayPosts();
-                }
-            });
-            pagination.appendChild(rightArrow);
-        }
-
-        function updateSections() {
-            if (currentPage === 1) {
-                discountsSection.style.display = 'block';
-            } else {
-                discountsSection.style.display = 'none';
-            }
-
-            if (currentPage === 2) {
-                comingSoonBanner1.style.display = 'block';
-            } else {
-                comingSoonBanner1.style.display = 'none';
-            }
-
-            if (currentPage === 3) {
-                comingSoonBanner2.style.display = 'block';
-            } else {
-                comingSoonBanner2.style.display = 'none';
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', displayPosts);
-    </script>
+    <script src="assets/js/shop-page.js"></script>
+    <script src="assets/js/blog.js"></script>
     
 </body>
 </html>

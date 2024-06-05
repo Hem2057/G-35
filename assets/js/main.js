@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const cartButton = document.getElementById('cart-button');
     const cartClose = document.getElementById('cart-close');
-    
     const cartCloseBtn = document.querySelector('.cart-tab .btn .exit');
     const addCartButtons = document.querySelectorAll('.addcart');
     const cartContainer = document.querySelector('.listcart');
@@ -9,6 +8,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalPriceElement = document.getElementById('total-price');
     const emptyCartMessage = document.getElementById('empty-cart-message');
     const shopNowButton = document.getElementById('shop-now-button');
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const navLinks = document.querySelectorAll('.nav__link');
+        const currentPath = window.location.pathname.split('/').pop();
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active-link');
+            } else {
+                link.classList.remove('active-link');
+            }
+        });
+    });
+
 
     let cartItems = [];
 
@@ -114,8 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCart();
 });
 
-
-/* Show Category */
+//product persona.................................
 function showCategory(category) {
     const categories = ['trending', 'new-arrivals', 'sales'];
     categories.forEach(cat => {
@@ -126,7 +139,50 @@ function showCategory(category) {
             productSection.style.display = 'none';
         }
     });
+
+    const listItems = document.querySelectorAll('.products-class li');
+    listItems.forEach(item => {
+        if (item.textContent.toLowerCase().includes(category.replace('-', ' '))) {
+            item.classList.add('active');
+        } else {
+            item.classList.remove('active');
+        }
+    });
 }
+
+// On page load, default active 'trending'
+document.addEventListener('DOMContentLoaded', function () {
+    showCategory('trending');
+});
+
+// Product search
+function searchProducts() {
+    const query = document.getElementById('search-input').value.toLowerCase();
+    const items = document.querySelectorAll('.listproduct .item');
+
+    items.forEach(item => {
+        const title = item.querySelector('h2').textContent.toLowerCase();
+        if (title.includes(query)) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+// Menu button functionality
+document.getElementById('menu-button').addEventListener('click', function () {
+    const productsClass = document.querySelector('.products-class');
+    if (productsClass.style.display === 'none' || productsClass.style.display === '') {
+        productsClass.style.display = 'flex';
+    } else {
+        productsClass.style.display = 'none';
+    }
+});
+
+searchProducts();
+;
+
 
 /* Show Menu */
 const navMenu = document.getElementById('nav-menu'),
@@ -279,27 +335,37 @@ window.addEventListener('scroll', function() {
     changeNavBarBackgroundColor();
 });
 
-function changeNavBarBackgroundColor() {
-    const articles = document.querySelectorAll('.article');
-    const navBar = document.querySelector('.header');
-    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+document.addEventListener('DOMContentLoaded', function() {
+    function changeNavBarBackgroundColor() {
+        const articles = document.querySelectorAll('.article');
+        const navBar = document.querySelector('.header');
+        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
-    if (scrollPosition === 0) {
-        navBar.style.backgroundColor = 'transparent';
-        return;
+        if (scrollPosition === 0) {
+            navBar.style.backgroundColor = 'transparent';
+            return;
+        }
+
+        articles.forEach(article => {
+            const articleTop = article.getBoundingClientRect().top + window.scrollY - navBar.offsetHeight;
+            const articleHeight = article.offsetHeight;
+            const articleBgColor = article.getAttribute('data-bgcolor');
+
+            if (scrollPosition >= articleTop && scrollPosition < articleTop + articleHeight) {
+                navBar.style.backgroundColor = articleBgColor;
+            }
+        });
     }
 
-    articles.forEach(article => {
-        const articleTop = article.getBoundingClientRect().top + window.scrollY - navBar.offsetHeight;
-        const articleHeight = article.offsetHeight;
-        const articleBgColor = article.getAttribute('data-bgcolor');
+    // Initially call the function to set the background color
+    changeNavBarBackgroundColor();
 
-        if (scrollPosition >= articleTop && scrollPosition < articleTop + articleHeight) {
-            navBar.style.backgroundColor = articleBgColor;
-        }
-    });
-}
+    // Add an event listener to call the function on scroll
+    window.addEventListener('scroll', changeNavBarBackgroundColor);
+});
 
+
+    
 //..................blog...................blog.............
 
 
@@ -309,8 +375,8 @@ function changeNavBarBackgroundColor() {
 document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
         let rect = card.getBoundingClientRect();
-        card.style.setProperty('--mouse-x', e.clientX - rect.left);
-        card.style.setProperty('--mouse-y', e.clientY - rect.top);
+        card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+        card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
     });
 
     card.addEventListener('mouseenter', () => {
@@ -322,7 +388,6 @@ document.querySelectorAll('.card').forEach(card => {
     });
 });
 
-// Product Classifier Button
 document.addEventListener('DOMContentLoaded', function () {
     const listItems = document.querySelectorAll('.products-class li');
 

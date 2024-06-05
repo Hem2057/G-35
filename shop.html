@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <title>e-commerce website</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <header class="header" id="header">
@@ -19,13 +24,14 @@
             </a>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="index.html" class="nav__link active-link">Home</a></li>
-                    <li class="nav__item"><a href="shop.html" class="nav__link">Shop</a></li>
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="shop.html" class="nav__link active-link">Shop</a></li>
                     <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
                     <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
                     <li class="nav__item"><a href="faq.html" class="nav__link">Faq's</a></li>
                     <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
                 </ul>
+                
                 <div class="nav__close" id="nav-close"><i class="bx bx-x"></i></div>
             </div>
             <div class="nav__btns">
@@ -44,7 +50,7 @@
             <button class="addcart" id="shop-now-button">Shop Now</button>
         </div>
         <div class="listcart"></div>
-        <div class="total-price" id="total-price"><span>$l0.00</span></div>
+        <div class="total-price" id="total-price"><span>$0.00</span></div>
         <div class="btn">
             <button class="exit" id="cart-close">CLOSE</button>
             <button class="checkout">CHECKOUT</button>
@@ -67,145 +73,106 @@
             <div><p class="signup">Not a member? <a href="registration.html">Sign up now</a></p></div>
         </form>
     </div>
-    <!--=============== CART ===============-->
-    
-
-    <!--=============== LOGIN ===============-->
-    <div class="login" id="login">
-        <i class="bx bx-x login__close" id="login-close"></i>
-
-        <h2 class="login__title-center">Login</h2>
-
-        <form action="" class="login__form grid">
-            <div class="login__content">
-                <label for="" class="login__label">Email</label>
-                <input type="email" class="login__input">
-            </div>
-
-            <div class="login__content">
-                <label for="" class="login__label">Password</label>
-                <input type="password" class="login__input">
-            </div>
-
-            <div>
-                <a href="#" class="button">Sign in</a>
-            </div>
-
-            <div>
-                <p class="signup">Not a member? <a href="registration.html">Sign up now</a></p>
-            </div>
-        </form>
-    </div>
 
     <!--=============== MAIN ===============-->
-    <main class="main">
+    <main class="main article" data-bgcolor="#4d2846">
         <!--=============== SHOP ===============-->
-        
-        <section class="shop section container">
-            <h2 class="breadcrumb__title">Shop Page</h2>
-            <h3 class="breadcrumb__subtitle">Home > <span>Shop</span></h3>
+            <section class="shop section container">
+                <h2 class="breadcrumb__title">Shop Page</h2>
+                <h3 class="breadcrumb__subtitle">Home > <span>Shop</span></h3>
 
-            <div class="shop__container grid">
-                <div class="sidebar">
-                    <h3 class="filter__title">Select Filters</h3>
-                    <div class="filter__content">
-                        <h3 class="filter__subtitle">Condition</h3>
-
-                        <div class="filter">
-                            <input type="checkbox" name="" id="">
-                            <p>New</p> <span>(13)</span>
+                <div class="shop__container grid">
+                    <div class="sidebar">
+                        <h3 class="filter__title">Select Filters</h3>
+                        <div class="filter__content">
+                            <h3 class="filter__subtitle">Condition</h3>
+                            <div class="filter">
+                                <input type="checkbox" name="" id="">
+                                <p>New</p> <span>(13)</span>
+                            </div>
+                            <div class="filter">
+                                <input type="checkbox" name="" id="">
+                                <p>Sale</p> <span>(13)</span>
+                            </div>
                         </div>
-                        <div class="filter">
-                            <input type="checkbox" name="" id="">
-                            <p>Sale</p> <span>(13)</span>
+                        <div class="filter__content">
+                            <h3 class="filter__subtitle">Size</h3>
+                            <div class="filter">
+                                <input type="checkbox" name="" id="">
+                                <p>s</p> <span>(13)</span>
+                            </div>
+                            <div class="filter">
+                                <input type="checkbox" name="" id="">
+                                <p>M</p> <span>(15)</span>
+                            </div>
+                            <div class="filter">
+                                <input type="checkbox" name="" id="">
+                                <p>L</p> <span>(6)</span>
+                            </div>
+                        </div>
+                        <div class="filter__content">
+                            <h3 class="filter__subtitle">Categories</h3>
+                            <div class="filter">
+                                <input type="checkbox" name="" id="">
+                                <p>Men</p> <span>(2)</span>
+                            </div>
+                            <div class="filter">
+                                <input type="checkbox" name="" id="">
+                                <p>Women</p> <span>(4)</span>
+                            </div>
+                            <div class="filter">
+                                <input type="checkbox" name="" id="">
+                                <p>Kids</p> <span>(6)</span>
+                            </div>
+                            <div class="filter">
+                                <input type="checkbox" name="" id="">
+                                <p>Others</p> <span>(4)</span>
+                            </div>
+                        </div>
+                        <div class="filter__content">
+                            <h3 class="filter__subtitle">Styles</h3>
+                            <div class="filter">
+                                <input type="checkbox" name="" id="">
+                                <p>Casual</p> <span>(2)</span>
+                            </div>
+                            <div class="filter">
+                                <input type="checkbox" name="" id="">
+                                <p>Dressy</p> <span>(4)</span>
+                            </div>
+                            <div class="filter">
+                                <input type="checkbox" name="" id="">
+                                <p>Girly</p> <span>(6)</span>
+                            </div>
+                        </div>
+                        <div class="filter__content">
+                            <h3 class="filter__subtitle">Sub Categories</h3>
+                            <div class="filter">
+                                <input type="checkbox" name="" id="">
+                                <p>Jackets</p> <span>(2)</span>
+                            </div>
+                            <div class="filter">
+                                <input type="checkbox" name="" id="">
+                                <p>T-shirts</p> <span>(4)</span>
+                            </div>
+                            <div class="filter">
+                                <input type="checkbox" name="" id="">
+                                <p>Accessories</p> <span>(6)</span>
+                            </div>
+                            <div class="filter">
+                                <input type="checkbox" name="" id="">
+                                <p>Shoes</p> <span>(4)</span>
+                            </div>
+                            <div class="filter">
+                                <input type="checkbox" name="" id="">
+                                <p>Coats</p> <span>(4)</span>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="filter__content">
-                        <h3 class="filter__subtitle">Size</h3>
-
-                        <div class="filter">
-                            <input type="checkbox" name="" id="">
-                            <p>s</p> <span>(13)</span>
-                        </div>
-                        <div class="filter">
-                            <input type="checkbox" name="" id="">
-                            <p>M</p> <span>(15)</span>
-                        </div>
-                        <div class="filter">
-                            <input type="checkbox" name="" id="">
-                            <p>L</p> <span>(6)</span>
-                        </div>
-                    </div>
-
-                    <div class="filter__content">
-                        <h3 class="filter__subtitle">Categories</h3>
-
-                        <div class="filter">
-                            <input type="checkbox" name="" id="">
-                            <p>Men</p> <span>(2)</span>
-                        </div>
-                        <div class="filter">
-                            <input type="checkbox" name="" id="">
-                            <p>Women</p> <span>(4)</span>
-                        </div>
-                        <div class="filter">
-                            <input type="checkbox" name="" id="">
-                            <p>Kids</p> <span>(6)</span>
-                        </div>
-                        <div class="filter">
-                            <input type="checkbox" name="" id="">
-                            <p>Others</p> <span>(4)</span>
-                        </div>
-                    </div>
-
-                    <div class="filter__content">
-                        <h3 class="filter__subtitle">Styles</h3>
-
-                        <div class="filter">
-                            <input type="checkbox" name="" id="">
-                            <p>Casual</p> <span>(2)</span>
-                        </div>
-                        <div class="filter">
-                            <input type="checkbox" name="" id="">
-                            <p>Dressy</p> <span>(4)</span>
-                        </div>
-                        <div class="filter">
-                            <input type="checkbox" name="" id="">
-                            <p>Girly</p> <span>(6)</span>
-                        </div>
-                    </div>
-
-                    <div class="filter__content">
-                        <h3 class="filter__subtitle">Sub Categories</h3>
-
-                        <div class="filter">
-                            <input type="checkbox" name="" id="">
-                            <p>Jackets</p> <span>(2)</span>
-                        </div>
-                        <div class="filter">
-                            <input type="checkbox" name="" id="">
-                            <p>T-shirts</p> <span>(4)</span>
-                        </div>
-                        <div class="filter">
-                            <input type="checkbox" name="" id="">
-                            <p>Accessories</p> <span>(6)</span>
-                        </div>
-                        <div class="filter">
-                            <input type="checkbox" name="" id="">
-                            <p>Shoes</p> <span>(4)</span>
-                        </div>
-                        <div class="filter">
-                            <input type="checkbox" name="" id="">
-                            <p>Coats</p> <span>(4)</span>
-                        </div>
-                    </div>
-                </div>
-            
-                    <div class="listproduct shop_product grid">
+                    
+                    <div class="listproduct shop_product grid product_page-1">
                         <div class="item">
                             <div class="hilight-content">50% OFF</div>
-                            <img src="/assets/img/product-2.png" alt="">
+                            <img src="assets/img/product-2.png" alt="">
                             <h2>Product 1</h2>
                             <div class="price">$2000</div>
                             <button class="addcart">Add to cart</button>
@@ -213,54 +180,99 @@
                     
                         <div class="item">
                             <div class="hilight-content">40% OFF</div>
-                            <img src="/assets/img/product-2.png" alt="">
+                            <img src="assets/img/product-2.png" alt="">
                             <h2>Product 2</h2>
                             <div class="price">$2000</div>
                             <button class="addcart">Add to cart</button>
                         </div>
                         <div class="item">
                             <div class="hilight-content">New</div>
-                            <img src="/assets/img/product-3.png" alt="">
+                            <img src="assets/img/product-3.png" alt="">
                             <h2>Product 3</h2>
                             <div class="price">$2000</div>
                             <button class="addcart">Add to cart</button>
                         </div>
                         <div class="item">
                             <div class="hilight-content">70% OFF</div>
-                            <img src="/assets/img/product-1.png" alt="">
+                            <img src="assets/img/product-1.png" alt="">
                             <h2>Product 4</h2>
                             <div class="price">$2000</div>
                             <button class="addcart">Add to cart</button>
                         </div>
                         <div class="item">
                             <div class="hilight-content">Sale</div>
-                            <img src="/assets/img/product-2.png" alt="">
+                            <img src="assets/img/product-2.png" alt="">
                             <h2>Product 5</h2>
                             <div class="price">$2000</div>
                             <button class="addcart">Add to cart</button>
                         </div>
                         <div class="item">
                             <div class="hilight-content">New</div>
-                            <img src="/assets/img/product-3.png" alt="">
+                            <img src="assets/img/product-3.png" alt="">
                             <h2>Product 6</h2>
                             <div class="price">$2000</div>
                             <button class="addcart">Add to cart</button>
                         </div>
                     </div>
+                    <div class="listproduct shop_product grid product_page-2 hidden">
+                        <div class="item">
+                            <div class="hilight-content">50% OFF</div>
+                            <img src="assets/img/product-2.png" alt="">
+                            <h2>Product 6</h2>
+                            <div class="price">$2000</div>
+                            <button class="addcart">Add to cart</button>
+                        </div>
+                    
+                        <div class="item">
+                            <div class="hilight-content">40% OFF</div>
+                            <img src="assets/img/product-2.png" alt="">
+                            <h2>Product 7</h2>
+                            <div class="price">$2000</div>
+                            <button class="addcart">Add to cart</button>
+                        </div>
+                        <div class="item">
+                            <div class="hilight-content">New</div>
+                            <img src="assets/img/product-3.png" alt="">
+                            <h2>Product 8</h2>
+                            <div class="price">$2000</div>
+                            <button class="addcart">Add to cart</button>
+                        </div>
+                        <div class="item">
+                            <div class="hilight-content">70% OFF</div>
+                            <img src="assets/img/product-1.png" alt="">
+                            <h2>Product 9</h2>
+                            <div class="price">$2000</div>
+                            <button class="addcart">Add to cart</button>
+                        </div>
+                        <div class="item">
+                            <div class="hilight-content">Sale</div>
+                            <img src="assets/img/product-2.png" alt="">
+                            <h2>Product 10</h2>
+                            <div class="price">$2000</div>
+                            <button class="addcart">Add to cart</button>
+                        </div>
+                        <div class="item">
+                            <div class="hilight-content">New</div>
+                            <img src="assets/img/product-3.png" alt="">
+                            <h2>Product 12</h2>
+                            <div class="price">$2000</div>
+                            <button class="addcart">Add to cart</button>
+                        </div>
+                    </div>
                 </div>
-
-            <div class="pagination">
-                <i class="bx bx-chevron-left pagination__icon"></i>
-
-                <span class="current">1</span>
-                <span>2</span>
-                <span>3</span>
-                <span>&middot; &middot; &middot;</span>
-                <span>9</span>
-
-                <i class="bx bx-chevron-right pagination__icon"></i>
-            </div>
-        </section>
+                    
+                <div class="pagination" id="pagination">
+                    <a href="#" class="pagination__icon pagination__icon--disabled" id="prev-page" aria-disabled="true">
+                        <i class="bx bx-chevron-left"></i>
+                    </a>
+                    <a href="#" class="pagination__link current" id="page-1-link">1</a>
+                    <a href="#" class="pagination__link" id="page-2-link">2</a>
+                    <a href="#" class="pagination__icon" id="next-page">
+                        <i class="bx bx-chevron-right"></i>
+                    </a>
+                </div>
+            </section>
+        </article>
     </main>
 
     <!--=============== FOOTER ===============-->
@@ -301,7 +313,7 @@
                 </ul>
             </div>
         </div>
-        <span class="footer__copy">Some of these design are taken from<br> https://www.youtube.com/watch?v=Ws69qob4veA&list=PLrKudo5h_b8DwVH6ym4oBfnvwE6IllFte</span>
+        <span class="footer__copy">| Group-35 |</span>
     </footer>
 
     <!--=============== SCROLL UP ===============-->
@@ -309,13 +321,14 @@
         <i class="bx bx-up-arrow-alt scrollup__icon"></i>
     </a>
 
-    <!--=============== STYLE SWITCHER ===============-->
-    
-    
     <!--=============== SWIPER JS ===============-->
     <script src="assets/js/swiper-bundle.min.js"></script>
 
-    <!--=============== JS ===============-->
+    <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
+    <!--.............shop-page............-->
+    <script src="assets/js/shop-page.js"></script>
+    
+    
 </body>
 </html>

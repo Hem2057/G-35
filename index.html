@@ -77,21 +77,21 @@
                         <h1>#Trending<br><span class="slider-txt">Summer Outfit</span></h1>
                         <button class="addcart">View Details</button>
                     </div>
-                    <div class="main-slider-img"><img src="/assets/img/cover-1.png" alt=""></div>
+                    <div class="main-slider-img"><img src="assets/img/cover-1.png" alt=""></div>
                 </div>
                 <div class="slide">
                     <div class="slider-content">
                         <h1>#Trending<br><span class="slider-txt">Winter Collection</span></h1>
                         <button class="addcart">View Details</button>
                     </div>
-                    <div class="main-slider-img"><img src="/assets/img/cover-2.png" alt=""></div>
+                    <div class="main-slider-img"><img src="assets/img/cover-2.png" alt=""></div>
                 </div>
                 <div class="slide">
                     <div class="slider-content">
                         <h1>#Trending<br><span class="slider-txt">Spring Fashion</span></h1>
                         <button class="addcart">View Details</button>
                     </div>
-                    <div class="main-slider-img"><img src="/assets/img/cover-3.png" alt=""></div>
+                    <div class="main-slider-img"><img src="assets/img/cover-3.png" alt=""></div>
                 </div>
             </div>
         </section>
@@ -100,7 +100,7 @@
     <article class="Banner-content article" data-bgcolor="#4d2846" >
         <div class="list">
             <div class="item">
-                <img src="/assets/img/banner-1.png" alt="">
+                <img src="assets/img/banner-1.png" alt="">
                 <div class="banner-slider">
                     <div class="title">SUMMER TRENDING</div>
                     <div class="slogon">Wear the Trend</div>
@@ -123,7 +123,7 @@
             </div>
 
             <div class="item">
-                <img src="/assets/img/banner-2.png" alt="">
+                <img src="assets/img/banner-2.png" alt="">
                 <div class="banner-slider">
                     <div class="title">SUMMER TRENDING</div>
                     <div class="slogon">Wear it Proud</div>
@@ -145,7 +145,7 @@
             </div>
 
             <div class="item">
-                <img src="/assets/img/banner-3.png" alt="">
+                <img src="assets/img/banner-3.png" alt="">
                 <div class="banner-slider">
                     <div class="title">SUMMER TRENDING</div>
                     <div class="slogon">Wear Your Confidence</div>
@@ -169,7 +169,7 @@
             </div>
 
             <div class="item">
-                <img src="/assets/img/banner-4.png" alt="">
+                <img src="assets/img/banner-4.png" alt="">
                 <div class="banner-slider">
                     <div class="title">SUMMER TRENDING</div>
                     <div class="slogon">Unleash Your Style</div>
@@ -256,16 +256,22 @@
                 <li onclick="showCategory('new-arrivals')">New Arrivals</li>
                 <li onclick="showCategory('sales')">Sales</li>
             </ul>
+            <div class="menu-button" id="menu-button">
+                <i class="bx bx-menu"></i>
+            </div>
+        
             <div class="search-product">
-                <input type="text" placeholder="Search products..." id="search-input">
+                <input type="text" placeholder="Search products..." id="search-input" oninput="searchProducts()">
                 <button id="search-button"><i class="bx bx-search"></i></button>
             </div>
+            
+            
         </div>
         <section class="product-container">
             <div class="listproduct" id="trending-products">
                 <div class="item">
                     <div class="hilight-content">50% OFF</div>
-                    <img src="/assets/img/product-2.png" alt="">
+                    <img src="assets/img/product-2.png" alt="">
                     <h2>Product 1</h2>
                     <div class="price">$2000</div>
                     <button class="addcart">Add to cart</button>
@@ -273,35 +279,35 @@
                 
                 <div class="item">
                     <div class="hilight-content">40% OFF</div>
-                    <img src="/assets/img/product-2.png" alt="">
+                    <img src="assets/img/product-2.png" alt="">
                     <h2>Product 2</h2>
                     <div class="price">$2000</div>
                     <button class="addcart">Add to cart</button>
                 </div>
                 <div class="item">
                     <div class="hilight-content">New</div>
-                    <img src="/assets/img/product-3.png" alt="">
+                    <img src="assets/img/product-3.png" alt="">
                     <h2>Product 3</h2>
                     <div class="price">$2000</div>
                     <button class="addcart">Add to cart</button>
                 </div>
                 <div class="item">
                     <div class="hilight-content">70% OFF</div>
-                    <img src="/assets/img/product-1.png" alt="">
+                    <img src="assets/img/product-1.png" alt="">
                     <h2>Product 4</h2>
                     <div class="price">$2000</div>
                     <button class="addcart">Add to cart</button>
                 </div>
                 <div class="item">
                     <div class="hilight-content">Sale</div>
-                    <img src="/assets/img/product-2.png" alt="">
+                    <img src="assets/img/product-2.png" alt="">
                     <h2>Product 5</h2>
                     <div class="price">$2000</div>
                     <button class="addcart">Add to cart</button>
                 </div>
                 <div class="item">
                     <div class="hilight-content">New</div>
-                    <img src="/assets/img/product-3.png" alt="">
+                    <img src="assets/img/product-3.png" alt="">
                     <h2>Product 6</h2>
                     <div class="price">$2000</div>
                     <button class="addcart">Add to cart</button>
@@ -310,42 +316,42 @@
             <div class="listproduct" id="new-arrivals-products" style="display:none;">
                 <div class="item">
                     <div class="hilight-content">New</div>
-                    <img src="/assets/img/new-1.png" alt="">
+                    <img src="assets/img/new-1.png" alt="">
                     <h2>new 1</h2>
                     <div class="price">$1500</div>
                     <button class="addcart">Add to cart</button>
                 </div>
                 <div class="item">
                     <div class="hilight-content">New</div>
-                    <img src="/assets/img/new-2.png" alt="">
+                    <img src="assets/img/new-2.png" alt="">
                     <h2>new 2</h2>
                     <div class="price">$1500</div>
                     <button class="addcart">Add to cart</button>
                 </div>
                 <div class="item">
                     <div class="hilight-content">New</div>
-                    <img src="/assets/img/new-3.png" alt="">
+                    <img src="assets/img/new-3.png" alt="">
                     <h2>new 3</h2>
                     <div class="price">$1500</div>
                     <button class="addcart">Add to cart</button>
                 </div>
                 <div class="item">
                     <div class="hilight-content">New</div>
-                    <img src="/assets/img/new-1.png" alt="">
+                    <img src="assets/img/new-1.png" alt="">
                     <h2>new 4</h2>
                     <div class="price">$1500</div>
                     <button class="addcart">Add to cart</button>
                 </div>
                 <div class="item">
                     <div class="hilight-content">New</div>
-                    <img src="/assets/img/new-2.png" alt="">
+                    <img src="assets/img/new-2.png" alt="">
                     <h2>new 5</h2>
                     <div class="price">$1500</div>
                     <button class="addcart">Add to cart</button>
                 </div>
                 <div class="item">
                     <div class="hilight-content">New</div>
-                    <img src="/assets/img/new-3.png" alt="">
+                    <img src="assets/img/new-3.png" alt="">
                     <h2>new 6</h2>
                     <div class="price">$1500</div>
                     <button class="addcart">Add to cart</button>
@@ -354,42 +360,42 @@
             <div class="listproduct" id="sales-products" style="display:none;">
                 <div class="item">
                     <div class="hilight-content">20% OFF</div>
-                    <img src="/assets/img/new-4.png" alt="">
+                    <img src="assets/img/new-4.png" alt="">
                     <h2>sales 1</h2>
                     <div class="price">$1000</div>
                     <button class="addcart">Add to cart</button>
                 </div>
                 <div class="item">
                     <div class="hilight-content">50% OFF</div>
-                    <img src="/assets/img/new-5.png" alt="">
+                    <img src="assets/img/new-5.png" alt="">
                     <h2>sales 2</h2>
                     <div class="price">$1000</div>
                     <button class="addcart">Add to cart</button>
                 </div>
                 <div class="item">
                     <div class="hilight-content">20% OFF</div>
-                    <img src="/assets/img/new-6.png" alt="">
+                    <img src="assets/img/new-6.png" alt="">
                     <h2>sales 3</h2>
                     <div class="price">$1000</div>
                     <button class="addcart">Add to cart</button>
                 </div>
                 <div class="item">
                     <div class="hilight-content">10% OFF</div>
-                    <img src="/assets/img/new-4.png" alt="">
+                    <img src="assets/img/new-4.png" alt="">
                     <h2>sales 4</h2>
                     <div class="price">$1000</div>
                     <button class="addcart">Add to cart</button>
                 </div>
                 <div class="item">
                     <div class="hilight-content">60% OFF</div>
-                    <img src="/assets/img/new-5.png" alt="">
+                    <img src="assets/img/new-5.png" alt="">
                     <h2>sales 5</h2>
                     <div class="price">$1000</div>
                     <button class="addcart">Add to cart</button>
                 </div>
                 <div class="item">
                     <div class="hilight-content">40% OFF</div>
-                    <img src="/assets/img/new-6.png" alt="">
+                    <img src="assets/img/new-6.png" alt="">
                     <h2>sales 6</h2>
                     <div class="price">$1000</div>
                     <button class="addcart">Add to cart</button>
@@ -530,7 +536,7 @@
                 </ul>
             </div>
         </div>
-        <span class="footer__copy">&#169; Hem. All rights reserved</span>
+        <span class="footer__copy">| Group-35 |</span>
     </footer>
 
     <a href="#" class="scrollup" id="scroll-up"><i class="bx bx-up-arrow-alt scrollup__icon"></i></a> 
